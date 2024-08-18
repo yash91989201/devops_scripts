@@ -34,13 +34,12 @@ setup_aws_cli() {
   }; then
     echo "Unable to configure aws cli, please try again."
   fi
-
 }
 
 main() {
   if ! aws --version >/dev/null 2>&1; then
-    # setup_aws_cli
-    echo "aws cli installing"
+    setup_aws_cli
+    echo "AWS CLI installing"
   else
     echo "AWS CLI installed and configured"
   fi
